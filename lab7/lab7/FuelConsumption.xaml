@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="lab7.FuelConsumption"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lab7"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+ 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+   
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <TextBox TextChanged="MyInput_TextChanged" Grid.Row="1" FontSize="20" Name="MyInput" TextAlignment="Center" Margin="5" Width="250" Text="0"></TextBox>
+        <TextBlock Name="MyError" Margin="0 -10 0 0" Visibility="Collapsed" Foreground="Red" Grid.Row="2" FontSize="14" TextAlignment="Center" Text="Литр на 100 километров"></TextBlock>
+        <TextBlock Grid.Row="3" FontSize="20" TextAlignment="Center" Text="Литр на 100 километров"></TextBlock>
+        <TextBlock  FontSize="30" TextAlignment="Center" Text="=" Grid.Row="4" Margin="5"></TextBlock>
+        <TextBox  IsReadOnly="True" FontSize="20" Name="MyAnswer" Grid.Row="5" TextAlignment="Center" Margin="5" Width="250"></TextBox>
+        <TextBlock Grid.Row="6" FontSize="20" TextAlignment="Center" Text="Миля на галлон"></TextBlock>
+    </Grid>
+</Page>

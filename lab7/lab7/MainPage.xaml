@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="lab7.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lab7"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid RequestedTheme="Dark">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Name="Gamburger" 
+                    FontFamily="Segoe MDL2 Assets" 
+                    FontSize="24" Content="&#xE700;" 
+                    Foreground="White" 
+                    VerticalAlignment="Stretch" 
+                    HorizontalAlignment="Stretch" 
+                    Click="Gamburger_Click"
+                    Background="{x:Null}">
+            </Button>
+            <TextBlock Grid.Column="1" 
+                       Name="Header"
+                       TextAlignment="Center" 
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"></TextBlock>
+        </Grid>
+        <SplitView Name="MySplitView" 
+                   Grid.Row="1" 
+                   OpenPaneLength="200" 
+                   DisplayMode="CompactInline"
+                   CompactPaneLength="50">
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListBox Name="MyListBox" Background="#222226" SelectionChanged="MyListBox_SelectionChanged">
+                    <ListBoxItem Name="ItemFuelConsumption" Height="50">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource ItemIcon}" Text="&#xE75E;"></TextBlock>
+                            <TextBlock Text="Расход топлива" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+
+                    <ListBoxItem Name="ItemArea" Height="50">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Style="{StaticResource ItemIcon}"  Text="&#xE7FD;"></TextBlock>
+                            <TextBlock Text="Площадь" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="ItemAbout" Height="50">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Style="{StaticResource ItemIcon}"  Text="&#xE7FD;"></TextBlock>
+                            <TextBlock Text="Площадь" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+                    <Button Grid.Row="1" VerticalAlignment="Bottom" Click="Button_Click" Background="#FF171717">
+                        <StackPanel Orientation="Horizontal" Width="200"  VerticalAlignment="Center">
+                            <TextBlock Style="{StaticResource ItemIcon}"  Text="&#xEE57;"></TextBlock>
+                            <TextBlock Text="О разработчике" Foreground="White"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame Name="MyFrame"></Frame>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
