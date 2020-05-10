@@ -1,7 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define MENU_ADD 1
+#define MENU_CHANGE 2
+#define MENU_DELETE 3
+#define MENU_SHOWALL 4
+#define MENU_EXIT 0
+
 #include <iostream>
 #include <windows.h>
 #include <vector>
+
 
 using namespace std;
 LPCWSTR records = L"records.txt";
@@ -29,27 +36,27 @@ int main() {
 	int key;
 	while (true) {
 		cout << "What do you want to do?\n" << endl;
-		cout << "[1]Add record" << endl;
-		cout << "[2]Change record" << endl;
-		cout << "[3]Delete record" << endl;	
-		cout << "[4]Show all records" << endl;
-		cout << "[0]Exit" << endl;
+		cout << "[" << MENU_ADD << "]Add record" << endl;
+		cout << "[" << MENU_CHANGE << "]Change record" << endl;
+		cout << "[" << MENU_DELETE << "]Delete record" << endl;
+		cout << "[" << MENU_SHOWALL << "]Show all records" << endl;
+		cout << "[" << MENU_EXIT << "]Exit" << endl;
 		cout << ">> ";
 		cin >> key;
 		switch (key) {
-		case 0:
+		case MENU_EXIT:
 			exit(EXIT_SUCCESS);
 			break;
-		case 1:
+		case MENU_ADD:
 			AddRecord();
 			break;
-		case 2:
+		case MENU_CHANGE:
 			ChangeRecord();
 			break;
-		case 3:
+		case MENU_DELETE:
 			DeleteRecord();
 			break;
-		case 4:
+		case MENU_SHOWALL:
 			ShowAllRecords();
 			break;
 		default:
