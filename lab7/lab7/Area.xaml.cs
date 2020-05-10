@@ -47,37 +47,37 @@ namespace lab7
                 return;
             }
             else MyError.Visibility = Visibility.Collapsed;
-            switch (From)
+            switch ((FromValue)From)
             {
-                case 0:
-                    switch (To)
+                case FromValue.SquareMeter:
+                    switch ((ToValue)To)
                     {
-                        case 0:
+                        case ToValue.SquareYard:
                             answ = inp * 1.1959900463011;
                             break;
-                        case 1:
+                        case ToValue.SquareMile:
                             answ = inp / 2589988.110336;
                             break;
                     }
                     break;
-                case 1:
-                    switch (To)
+                case FromValue.SquareKilometer:
+                    switch ((ToValue)To)
                     {
-                        case 0:
+                        case ToValue.SquareYard:
                             answ = inp * 1.196e+6;
                             break;
-                        case 1:
+                        case ToValue.SquareMile:
                             answ = inp / 2.59;
                             break;
                     }
                     break;
-                case 2:
-                    switch (To)
+                case FromValue.Hectare:
+                    switch ((ToValue)To)
                     {
-                        case 0:
+                        case ToValue.SquareYard:
                             answ = inp * 11959.900463011;
                             break;
-                        case 1:
+                        case ToValue.SquareMile:
                             answ = inp / 258.9988110336;
                             break;
                     }
@@ -102,5 +102,17 @@ namespace lab7
             if (!start) return;
             main();
         }
+    }
+    public enum FromValue
+    {
+        SquareMeter,
+        SquareKilometer,
+        Hectare
+    }
+
+    public enum ToValue
+    {
+        SquareYard,
+        SquareMile
     }
 }
