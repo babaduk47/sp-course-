@@ -1,4 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define MENU_PRINT 1
+#define MENU_COPY 2
+#define MENU_CREATE 3
+#define MENU_INFO_MORE 4
+#define MENU_DELETE 5
+#define MENU_SET 0
 #include <windows.h>;
 #include <iostream>
 #include <locale.h>
@@ -29,33 +35,33 @@ int main() {
 		SetConsoleTitle(dir);
 
 		cout << "What do you want to do?\n" << endl;
-		cout << "[1]Print directory" << endl;
-		cout << "[2]Copy File in current directory" << endl;
-		cout << "[3]Create directory in current directory" << endl;
-		cout << "[4]More information about file" << endl;
-		cout << "[5]Delete file or empty directory" << endl;
-		cout << "[0]Set directory" << endl;
+		cout << "[" << MENU_PRINT << "]Print directory" << endl;
+		cout << "[" << MENU_COPY << "]Copy File in current directory" << endl;
+		cout << "[" << MENU_CREATE << "]Create directory in current directory" << endl;
+		cout << "[" << MENU_INFO_MORE << "]More information about file" << endl;
+		cout << "[" << MENU_DELETE << "]Delete file or empty directory" << endl;
+		cout << "[" << MENU_SET << "]Set directory" << endl;
 		cout << ">> ";
 
 		cin >> key;
 
 		switch (key) {
-		case 0:
+		case MENU_SET:
 			SetDir(buffer);
 			break;
-		case 1:
+		case MENU_PRINT:
 			PrintDir(buffer);
 			break;
-		case 2:
+		case MENU_COPY:
 			CopyFileInCurDir(buffer);
 			break;
-		case 3:
+		case MENU_CREATE:
 			CreateDir(buffer);
 			break;
-		case 4:
+		case MENU_INFO_MORE:
 			FullInfo(buffer);
 			break;
-		case 5:
+		case MENU_DELETE:
 			DeleteDir(buffer);
 			break;
 		}
